@@ -1,6 +1,6 @@
 # ruby_taskOperator
 
-Task operate assistant web application made by Ruby.
+This is a task operate assistant web application made by Ruby.
 
 ## How to setup
 
