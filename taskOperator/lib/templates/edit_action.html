@@ -1,0 +1,37 @@
+<form method="post" style="width: 800px; margin: 0px auto; border: 0px solid #000;">
+  <input type="hidden" name="mode" value="apply_action" />
+  <input type="hidden" name="id" value="_%id%_" />
+  <input type="hidden" name="plan_id" value="_%plan_id%_" />
+  <table class="edit" style="border-bottom: 1px solid #000; width: 800px;">
+    <tr>
+      <th>プラン名</th>
+      <td>_%plan_title%_</td>
+    </tr>
+    <tr>
+      <th height=110 valign=top>完了条件</th>
+      <td valign=top>_%plan_complete%_</td>
+    </tr>
+  </table>
+  <table class="edit">
+    <tr>
+      <th valign=top>対応内容</th>
+      <td><textarea name="note" style="width: 650px; height: 100px;">_%note%_</textarea></td>
+    </tr>
+  </table>
+  <table class="edit">
+    <tr>
+      <th>対応日</th>
+      <td width=300><input type="text" name="add_date" value="_%add_date%_" /></td>
+      
+      <th>主担当</th>
+      <td>_%user_id%_</td>
+      
+      <th>状況</th>
+      <td>_%status%_</td>
+    </tr>
+    <tr>
+      <th>&nbsp;</th>
+      <td><input type="submit" name="submit" value="送信" /></td>
+    </tr>
+  </table>
+</form>

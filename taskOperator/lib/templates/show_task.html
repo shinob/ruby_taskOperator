@@ -1,0 +1,56 @@
+<form method="post" style="border: 0px solid #000;">
+  <input type="hidden" name="mode" value="edit_task" />
+  <input type="hidden" name="id" value="_%id%_" />
+  <table class="edit" style="border-bottom: 1px solid #000;">
+    <tr>
+      <th>件名</th>
+      <td>
+        <div>_%title%_</div>
+      </td>
+    </tr>
+    <tr>
+      <th height=110 valign=top>内容</th>
+      <td valign=top>
+        <div>_%note%_</div>
+      </td>
+    </tr>
+  </table>
+  <table class="edit">
+    <tr>
+      <th>登録日</th>
+      <td>
+        <div>_%add_date%_</div>
+      </td>
+    </tr>
+  </table>
+  <table class="edit">
+    <tr>
+      <th>依頼元</th>
+      <td width=300><div>_%task_from%_</div></td>
+      <th>依頼日</th>
+      <td><div>_%task_date%_</div></td>
+    </tr>
+    <tr>
+      <th>担当部署</th>
+      <td><div>_%section%_</div></td>
+      <th>主担当</th>
+      <td><div>_%user_id%_</div></td>
+    </tr>
+  </table>
+  <table class="edit">
+    <tr>
+      <th>分類</th>
+      <td><div>_%category%_</div></td>
+    </tr>
+    <tr>
+      <th>タグ</th>
+      <td><div>_%tags%_</div></td>
+    </tr>
+<!--
+    <tr>
+      <th>&nbsp;</th>
+      <td><input type="submit" name="submit" value="編集" /></td>
+    </tr>
+-->
+  </table>
+</form>

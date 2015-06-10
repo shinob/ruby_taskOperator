@@ -1,0 +1,41 @@
+<form method="post">
+  <input type="hidden" name="mode" value="apply_plan" />
+  <input type="hidden" name="id" value="_%id%_" />
+  <input type="hidden" name="task_id" value="_%task_id%_" />
+  <table class="edit" style="border-bottom: 1px solid #000;">
+    <tr>
+      <th width=70>件名</th>
+      <td>_%task_title%_</td>
+    </tr>
+    <tr>
+      <th height=110 valign=top>内容</th>
+      <td valign=top>_%task_note%_</td>
+    </tr>
+  </table>
+  <table class="edit">
+    <tr>
+      <th>件名</th>
+      <td><input type="text" name="title" style="width: 650px;" value="_%title%_" /></td>
+    </tr>
+    <tr>
+      <th valign=top>完了条件</th>
+      <td><textarea name="complete" style="width: 650px; height: 100px;">_%complete%_</textarea></td>
+    </tr>
+  </table>
+  <table class="edit">
+    <tr>
+      <th>開始日</th>
+      <td width=300><input type="text" name="add_date" value="_%add_date%_" /></td>
+      
+      <th>主担当</th>
+      <td>_%user_id%_</td>
+      
+      <th width=70>状況</th>
+      <td>_%status%_</td>
+    </tr>
+    <tr>
+      <th>&nbsp;</th>
+      <td><input type="submit" name="submit" value="送信" /></td>
+    </tr>
+  </table>
+</form>

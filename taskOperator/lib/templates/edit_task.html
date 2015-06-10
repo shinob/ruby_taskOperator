@@ -1,0 +1,50 @@
+<form method="post" style="width: 800px; margin: 0px auto; border: 0px solid #000;">
+  <input type="hidden" name="mode" value="apply_task" />
+  <input type="hidden" name="id" value="_%id%_" />
+  <table class="edit" style="border-bottom: 1px solid #000; width: 800px;">
+    <tr>
+      <th>件名</th>
+      <td><input type="text" name="title" value="_%title%_" style="width: 650px;" /></td>
+    </tr>
+    <tr>
+      <th valign=top>内容</th>
+      <td><textarea name="note" style="width: 650px; height: 100px;">_%note%_</textarea></td>
+    </tr>
+  </table>
+  <table class="edit">
+    <tr>
+      <th>登録日</th>
+      <td>
+        <div>_%add_date%_&nbsp;</div>
+      </td>
+    </tr>
+  </table>
+  <table class="edit">
+    <tr>
+      <th>依頼元</th>
+      <td width=300><input type="text" name="task_from" style="width: 300px;" value="_%task_from%_" /></td>
+      <th>依頼日</th>
+      <td><input type="text" name="task_date" value="_%task_date%_" /></td>
+    </tr>
+    <tr>
+      <th>担当部署</th>
+      <td><input type="text" name="section" style="width: 300px;" value="_%section%_" /></td>
+      <th>主担当</th>
+      <td>_%user_id%_</td>
+    </tr>
+  </table>
+  <table class="edit">
+    <tr>
+      <th>分類</th>
+      <td><input type="text" name="category" value="_%category%_" style="width: 650px;" /></td>
+    </tr>
+    <tr>
+      <th>タグ</th>
+      <td><input type="text" name="tags" value="_%tags%_" style="width: 650px;" /></td>
+    </tr>
+    <tr>
+      <th>&nbsp;</th>
+      <td><input type="submit" name="submit" value="送信" /></td>
+    </tr>
+  </table>
+</form>

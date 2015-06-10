@@ -1,0 +1,238 @@
+* {
+	margin: 0px;
+	padding: 0px;
+	font-size: 11pt;
+	font-family:'Lucida Grande', 'Hiragino Kaku Gothic ProN', 'ヒラギノ角ゴ ProN W3', Meiryo, メイリオ, sans-serif;
+	color: #333;
+}
+
+body {
+	padding-top: 40px;
+	background-color: #FFF;
+}
+
+div {
+	border: 0px solid #FF0000;
+	margin-top: 0px;
+}
+
+table {
+	border: 0px solid #00FF00;
+}
+
+form {
+	border: 0px solid #0000FF;
+}
+
+input, textarea, select, button {
+/*
+	margin: 0px;
+	padding: 0px;
+	border: 1px solid #CCC;
+	background-color: #FFF;
+*/
+}
+
+a {
+	text-decoration: none;
+}
+
+a:hover {
+	color: #F00;
+}
+
+.debug {
+	margin: 0px;
+	padding: 5px;
+	border: 0px;
+	background-color: #FF9999;
+}
+
+#head {
+	font-size: 18pt;
+	font-weight: bold;
+	line-height: 70px;
+/*
+	border: none;
+*/
+	border-bottom: 0px solid black;
+	background-color: #FFF;
+	width: 800px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+#menu {
+/*
+	line-height: 40px;
+*/
+	height: 40px;
+	border: none;
+	background-color: #003;
+	color: #FFF;
+	width: 100%;
+	position: fixed;
+	top: 0px;
+	left: 0px;
+}
+
+#menu form p {
+	display: block;
+	border: 0px solid #F00;
+	padding: 0px 5px;
+	margin-left: 5px;
+	line-height:40px;
+	float: left;
+	color: #FFF;
+	cursor: pointer;
+}
+
+#menu a:hover p {
+	color: #F00;
+}
+
+#cont {
+	clear: both;
+}
+
+#foot {
+/*
+	display: none;
+*/
+	border-top: 0px solid #000;
+	text-align: center;
+}
+
+#login_form {
+}
+
+#login_form table {
+	width: 500px;
+	margin: 0px auto;
+}
+
+#login_form th {
+	text-align: left;
+	padding-right: 5px;
+}
+
+#login_form input {
+	padding: 5px;
+}
+
+#login_message {
+	color: #F00;
+	line-height: 50px;
+}
+
+table.edit {
+	width: 800px;
+	margin: 0px auto;
+}
+
+table.edit th, table.edit td {
+	text-align: left;
+	padding: 5px 0px;
+}
+
+table.edit th {
+	width: 80px;
+}
+
+table.edit div, table.edit input, table.edit textarea, table.edit select {
+	padding: 5px 0px;
+}
+
+div.task_list form {
+	padding: 10px;
+	border-bottom: 1px solid #999;
+}
+
+div.task_list h1 {
+	font-size: 16pt;
+	cursor: pointer;
+	font-weight: normal;
+}
+
+div.task_list a:hover form {
+	background-color: #DDD;
+}
+
+div.task_list div {
+	padding: 0px 20px;
+}
+
+div.plan_list {
+	width: 800px;
+	margin: 0px auto;
+}
+
+div.plan_list .title {
+	border-bottom: 1px solid #F33;
+	text-align: right;
+	font-weight: bold;
+	color: #F33;
+	background-color: #FEE;
+	padding: 5px 0px;
+}
+
+div.plan_list form {
+	padding: 5px;
+	border-bottom: 1px solid #999;
+}
+
+div.plan_list h1 {
+	font-size: 14pt;
+	cursor: pointer;
+}
+
+div.plan_list p {
+	margin-left: 20px;
+}
+
+div.plan_list a:hover form {
+	background-color: #FCC;
+}
+
+div.action_list {
+	width: 800px;
+	margin: 0px auto;
+}
+
+div.action_list .title {
+	border-bottom: 1px solid #33F;
+	text-align: right;
+	font-weight: bold;
+	color: #33F;
+	background-color: #EEF;
+	padding: 5px 0px;
+}
+
+div.action_list form {
+	padding: 10px 5px 10px 30px;
+	border-bottom: 1px solid #999;
+}
+
+div.action_list h1 {
+	font-size: 11pt;
+	cursor: pointer;
+	font-weight: normal;
+}
+
+div.action_list p {
+	margin: 0px;
+	text-align: right
+}
+
+div.action_list a:hover form {
+	background-color: #CCF;
+}
+
+div.plan_list div.action_list .title {
+	display: none;
+}
+
+form.edit_form {
+	width: 800px;
+	margin: 0px auto;
+}
