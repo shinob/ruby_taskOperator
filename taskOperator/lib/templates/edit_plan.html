@@ -4,7 +4,7 @@
   <input type="hidden" name="task_id" value="_%task_id%_" />
   <table class="edit" style="border-bottom: 1px solid #000;">
     <tr>
-      <th width=70>件名</th>
+      <th width=70>タスク名</th>
       <td>_%task_title%_</td>
     </tr>
     <tr>
@@ -14,7 +14,7 @@
   </table>
   <table class="edit">
     <tr>
-      <th>件名</th>
+      <th>プラン名</th>
       <td><input type="text" name="title" style="width: 650px;" value="_%title%_" /></td>
     </tr>
     <tr>
@@ -31,7 +31,10 @@
       <td>_%user_id%_</td>
       
       <th width=70>状況</th>
-      <td>_%status%_</td>
+      <td>
+        <input type="hidden" name="status" value="_%status%_" />
+        _%status%_
+      </td>
     </tr>
     <tr>
       <th>&nbsp;</th>

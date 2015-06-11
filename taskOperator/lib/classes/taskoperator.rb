@@ -46,6 +46,7 @@ class TaskOperator
       id = tsk.apply($_POST)
       tsk.set_status(id, pln.get_task_status(id))
       
+      @menu = ""
       $_POST["id"] = id
       $_POST["mode"] = "show_task"
       html = main()
@@ -77,6 +78,7 @@ class TaskOperator
       pln.apply($_POST)
       tsk.set_status(task_id, pln.get_task_status(task_id))
       
+      @menu = ""
       $_POST["id"] = task_id
       $_POST["mode"] = "show_task"
       html = main()
@@ -97,6 +99,7 @@ class TaskOperator
       task_id = pln.get_task_id(plan_id)
       tsk.set_status(task_id, pln.get_task_status(task_id))
       
+      @menu = ""
       $_POST["id"] = plan_id
       $_POST["task_id"] = pln.get_task_id(plan_id)
       $_POST["mode"] = "show_plan"
