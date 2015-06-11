@@ -25,6 +25,7 @@ class KmrActions < Model
   def add(plan_id)
     
     vals = get_blank_data()
+    vals["add_date"] = Date.today.strftime("%Y-%m-%d")
     
     return get_edit_form(vals, plan_id)
     

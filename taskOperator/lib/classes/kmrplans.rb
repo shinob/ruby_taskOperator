@@ -25,6 +25,7 @@ class KmrPlans < Model
   def add(task_id)
     
     vals = get_blank_data()
+    vals["add_date"] = Date.today.strftime("%Y-%m-%d")
     vals["status"] = "未着手"
     return get_edit_form(vals, task_id)
     

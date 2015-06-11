@@ -22,6 +22,7 @@ class KmrTasks < Model
   def add()
     
     vals = get_blank_data()
+    vals["task_date"] = Date.today.strftime("%Y-%m-%d")
     return get_edit_form(vals)
     
   end
@@ -53,13 +54,13 @@ class KmrTasks < Model
   
   def list_all()
     
-    return get_list_table(get_data_with_order("add_date"))
+    return get_list_table(get_data_with_order("task_date"))
     
   end
   
   def list_not_complete()
     
-    sql = "SELECT * FROM #{@table} WHERE status != '100 %' ORDER BY add_date"
+    sql = "SELECT * FROM #{@table} WHERE status != '100 %' ORDER BY task_date"
     vals = @db.query(sql)
     
     return get_list_table(vals)
@@ -76,15 +77,15 @@ class KmrTasks < Model
     vals.each do |row|
       
       disp_name = $usr.get_disp_name(row["user_id"])
-      color = (color == "#FFF") ? "#EEE" : "#FFF"
+      color = (row["status"] == "100 %") ? "style='color: #F66;'" : ""
       
       html += <<EOF
 <a href="#" onClick="document.edit_task_#{row["id"]}.submit();">
 <form method='post' name='edit_task_#{row["id"]}'>
   <input type="hidden" name="id" value="#{row['id']}" />
   <input type="hidden" name="mode" value="show_task" />
-  <h1>#{row["title"]}</h1>
-  <div>#{row["add_date"]} [#{disp_name}] #{row["status"]}</div>
+  <h1 #{color}>#{row["title"]}</h1>
+  <div>#{row["task_date"]} [#{disp_name}] #{row["status"]}</div>
 </form>
 </a>
 EOF
