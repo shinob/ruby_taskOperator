@@ -24,6 +24,12 @@ class TaskOperator
     @menu += $usr.get_logout_form()
     
     case mode
+    when "find_task"
+      word = $_POST["word"]
+      @menu += get_list_task_form()
+      #@menu += get_user_list_form()
+      @style = "#head { display: none; }"
+      html += tsk.find(word)
     when "add_task"
       html += tsk.add()
       @menu += get_cancel_form()
@@ -138,6 +144,7 @@ class TaskOperator
     else
       @menu += get_add_task_form()
       @menu += get_list_all_task_form()
+      @menu += get_find_task_form()
       @menu += get_user_list_form()
       #html += tsk.list_all()
       @style = "#head { display: none; }"
@@ -263,6 +270,18 @@ EOF
   
   def get_add_task_form()
     return get_task_form(0, "add_task", "タスク追加")
+  end
+  
+  def get_find_task_form()
+    html = <<EOF
+<form method="post" name="find_task" id="find_task">
+  <input type="hidden" name="mode" value="find_task" />
+  <input type="input" name="word" value="" />
+  <input type="submit" name="submit" value="検索" />
+</form>
+</a>
+EOF
+    return html
   end
   
   def get_plan_form(id, task_id, name, str)

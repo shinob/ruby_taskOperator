@@ -27,6 +27,15 @@ class KmrTasks < Model
     
   end
   
+  def find(word)
+    
+    sql = "SELECT * FROM #{@table} WHERE title LIKE '%#{word}%' OR tags LIKE '%#{word}%' ORDER BY task_date"
+    vals = @db.query(sql)
+    
+    return get_list_table(vals)
+    
+  end
+  
   def get_edit_form(vals)
     
     vals["user_id"] = $usr.get_user_select_form(vals["user_id"])

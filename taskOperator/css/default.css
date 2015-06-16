@@ -236,3 +236,9 @@ form.edit_form {
 	width: 800px;
 	margin: 0px auto;
 }
+
+#find_task input {
+	margin: 5px 2px;
+	height: 30px;
+	font-size: 10pt;
+}
