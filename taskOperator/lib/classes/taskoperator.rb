@@ -276,10 +276,13 @@ EOF
     html = <<EOF
 <form method="post" name="find_task" id="find_task">
   <input type="hidden" name="mode" value="find_task" />
-  <input type="input" name="word" value="" />
-  <input type="submit" name="submit" value="検索" />
+  <table>
+    <tr>
+      <td><input type="text" name="word" value="" /></td>
+      <td><input type="submit" name="submit" value="検索" /></td>
+    </tr>
+  </table>
 </form>
-</a>
 EOF
     return html
   end
