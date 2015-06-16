@@ -139,14 +139,13 @@ class KmrUsers < Model
   def get_add_form()
     
     html = <<EOF
+<a href="#" onclick="document.add_user.submit();">
 <form method='post' name="add_user">
   <input type="hidden" name="id" value="0" />
   <input type="hidden" name="mode" value="add_user" />
-<!--
-  <input type="submit" name="submit" value="追加" />
--->
-  <p onclick="document.add_user.submit();">ユーザー追加</p>
+  <p>ユーザー追加</p>
 </form>
+</a>
 EOF
     return html
     

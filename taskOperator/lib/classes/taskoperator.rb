@@ -2,6 +2,7 @@ class TaskOperator
 
   def initialize()
     @style = ""
+    @page_title = "タスクオペレーター"
     @title = ""
     @foot = "&nbsp;"
     @menu = ""
@@ -153,6 +154,7 @@ class TaskOperator
     
     wk = {
       "style" => @style,
+      "page_title" => @page_title,
       "title" => @title,
       "menu" => @menu,
       "cont" => html,
