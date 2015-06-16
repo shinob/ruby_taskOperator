@@ -94,7 +94,7 @@ class KmrTasks < Model
   <input type="hidden" name="id" value="#{row['id']}" />
   <input type="hidden" name="mode" value="show_task" />
   <h1 #{color}>#{row["title"]}</h1>
-  <div>#{row["task_date"]} [#{disp_name}] #{row["status"]}</div>
+  <div>#{row["task_date"]} #{row["task_from"]} → #{row["section"]} [#{disp_name}] #{row["status"]}</div>
 </form>
 </a>
 EOF
