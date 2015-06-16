@@ -142,10 +142,10 @@ class TaskOperator
       @title = "&nbsp;"
       
     else
+      @menu += get_user_list_form()
       @menu += get_add_task_form()
       @menu += get_list_all_task_form()
       @menu += get_find_task_form()
-      @menu += get_user_list_form()
       #html += tsk.list_all()
       @style = "#head { display: none; }"
       html += tsk.list_not_complete()
