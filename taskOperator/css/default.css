@@ -239,6 +239,8 @@ form.edit_form {
 
 #find_task table {
 	height: 40px;
+	padding-left: 10px;
+	border: 0px solid #F00;
 }
 #find_task input {
 /*

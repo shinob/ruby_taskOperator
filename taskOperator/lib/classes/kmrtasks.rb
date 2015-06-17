@@ -82,6 +82,7 @@ class KmrTasks < Model
     #html = get_add_form()
     
     color = "#EEE"
+    cnt = 1
     
     vals.each do |row|
       
@@ -93,11 +94,12 @@ class KmrTasks < Model
 <form method='post' name='edit_task_#{row["id"]}'>
   <input type="hidden" name="id" value="#{row['id']}" />
   <input type="hidden" name="mode" value="show_task" />
-  <h1 #{color}>#{row["title"]}</h1>
+  <h1 #{color}>#{cnt}. #{row["title"]}</h1>
   <div>#{row["task_date"]} #{row["task_from"]} → #{row["section"]} [#{disp_name}] #{row["status"]}</div>
 </form>
 </a>
 EOF
+      cnt += 1
     end
     
     if html != "" then
