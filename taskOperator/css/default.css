@@ -57,7 +57,7 @@ a:hover {
 */
 	border-bottom: 0px solid black;
 	background-color: #FFF;
-	width: 800px;
+	width: 750px;
 	margin-left: auto;
 	margin-right: auto;
 }
@@ -126,7 +126,7 @@ a:hover {
 }
 
 table.edit {
-	width: 800px;
+	width: 750px;
 	margin: 0px auto;
 }
 
@@ -163,7 +163,7 @@ div.task_list div {
 }
 
 div.plan_list {
-	width: 800px;
+	width: 750px;
 	margin: 0px auto;
 }
 
@@ -195,7 +195,7 @@ div.plan_list a:hover form {
 }
 
 div.action_list {
-	width: 800px;
+	width: 750px;
 	margin: 0px auto;
 }
 
@@ -233,7 +233,7 @@ div.plan_list div.action_list .title {
 }
 
 form.edit_form {
-	width: 800px;
+	width: 750px;
 	margin: 0px auto;
 }
 

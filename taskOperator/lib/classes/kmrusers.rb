@@ -167,6 +167,7 @@ EOF
   <input type="hidden" name="id" value="#{row['id']}" />
   <input type="hidden" name="mode" value="edit_user" />
   <h1>#{row["disp_name"]}</h1>
+  <div>#{row["name"]} [#{row["auth_type"]}]</div>
 </form>
 </a>
 EOF
@@ -224,6 +225,36 @@ EOF
     if tmp.length == 0 then
       name = ""
       @message = "ユーザー名またはパスワードが間違っています"
+    end
+    
+    debug("docUsers : login() : #{name}")
+    debug(tmp.to_s)
+    
+    return name
+    
+  end
+  
+  def login_with_ldap()
+    
+    name = $_POST["name"]
+    pass = $_POST["pass"]
+    
+    sql = "SELECT * FROM #{@table} WHERE name = '#{name}'"
+    tmp = @db.query(sql)
+    
+    if tmp.length == 0 then
+      name = ""
+      @message = "ユーザー名またはパスワードが間違っています"
+    else
+      
+      ad = ADUser.new($ad_host, $ad_port, $ad_domain)
+      if ad.exists(name, pass) then
+        
+      else
+        name = ""
+        @message = "ユーザー名またはパスワードが間違っています"
+      end
+      
     end
     
     debug("docUsers : login() : #{name}")
