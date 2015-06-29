@@ -132,7 +132,7 @@ class KmrPlans < Model
 <div
   onMouseOver="this.className='plan_list_onmouseover';"
   onMouseOut="this.className='plan_list_onmouseout';"
-  onClick="document.edit_plan_#{row["id"]}.submit();"
+  onClick="this.className='plan_list_onmouseout'; document.edit_plan_#{row["id"]}.submit();"
 >
 <form method='post' name='edit_plan_#{row["id"]}'>
   <input type="hidden" name="id" value="#{row['id']}" />

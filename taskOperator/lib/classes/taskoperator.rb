@@ -70,7 +70,6 @@ class TaskOperator
       @style = "#head { display: none; }"
       html += tsk.list_completed()
       
-      
     when "add_plan"
       html += pln.add(task_id)
       @menu += get_show_task_form(task_id)
@@ -156,9 +155,6 @@ class TaskOperator
       #html += tsk.list_all()
       @style = <<EOF
 #head { display: none; }
-div.plan_list { width: 90%; border: 0px solid #0F0;}
-div.plan_list div { margin: 0px; padding: 0px; }
-div.action_list { width: 100%; }
 EOF
       html += tsk.list_not_complete()
     end
@@ -303,7 +299,7 @@ EOF
   <input type="hidden" name="mode" value="find_task" />
   <table>
     <tr>
-      <td><input type="text" name="word" value="" /></td>
+      <td><input type="text" name="word" value="" size=10 /></td>
       <td><input type="submit" name="submit" value="検索" /></td>
     </tr>
   </table>

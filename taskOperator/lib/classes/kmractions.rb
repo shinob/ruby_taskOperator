@@ -99,7 +99,7 @@ class KmrActions < Model
 <div
   onMouseOver="this.className='action_list_onmouseover';"
   onMouseOut="this.className='action_list_onmouseout';"
-  onClick="document.edit_action_#{row["id"]}.submit();"
+  onClick="this.className='action_list_onmouseout'; document.edit_action_#{row["id"]}.submit();"
 >
 <form method='post' name='edit_action_#{row["id"]}'>
   <input type="hidden" name="id" value="#{row['id']}" />
