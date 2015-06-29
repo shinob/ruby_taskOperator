@@ -64,6 +64,12 @@ class TaskOperator
       @style = "#head { display: none; }"
       html += tsk.list_all()
       #html += tsk.list_not_complete()
+    when "list_completed_task"
+      @menu += get_list_task_form()
+      @menu += get_user_list_form()
+      @style = "#head { display: none; }"
+      html += tsk.list_completed()
+      
       
     when "add_plan"
       html += pln.add(task_id)
