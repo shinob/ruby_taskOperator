@@ -145,9 +145,15 @@ class TaskOperator
       @menu += get_user_list_form()
       @menu += get_add_task_form()
       @menu += get_list_all_task_form()
+      @menu += get_list_completed_task_form()
       @menu += get_find_task_form()
       #html += tsk.list_all()
-      @style = "#head { display: none; }"
+      @style = <<EOF
+#head { display: none; }
+div.plan_list { width: 90%; border: 0px solid #0F0;}
+div.plan_list div { margin: 0px; padding: 0px; }
+div.action_list { width: 100%; }
+EOF
       html += tsk.list_not_complete()
     end
     
@@ -240,7 +246,20 @@ EOF
 <a href="#" onClick="document.#{name}.submit();">
 <form method="post" name="#{name}">
   <input type="hidden" name="mode" value="#{name}" />
-  <p>全タスク一覧</p>
+  <p>全タスク</p>
+</form>
+</a>
+EOF
+    return html
+  end
+  
+  def get_list_completed_task_form()
+    name = "list_completed_task"
+    html = <<EOF
+<a href="#" onClick="document.#{name}.submit();">
+<form method="post" name="#{name}">
+  <input type="hidden" name="mode" value="#{name}" />
+  <p>完了タスク</p>
 </form>
 </a>
 EOF

@@ -76,7 +76,18 @@ class KmrTasks < Model
     
   end
   
+  def list_completed()
+    
+    sql = "SELECT * FROM #{@table} WHERE status = '100 %' ORDER BY task_date"
+    vals = @db.query(sql)
+    
+    return get_list_table(vals)
+    
+  end
+  
   def get_list_table(vals)
+    
+    pln = KmrPlans.new()
     
     html = ""
     #html = get_add_form()
@@ -87,17 +98,26 @@ class KmrTasks < Model
     vals.each do |row|
       
       disp_name = $usr.get_disp_name(row["user_id"])
-      color = (row["status"] == "100 %") ? "style='color: #F66;'" : ""
+      color = (row["status"] == "100 %") ? "color: #F66;" : ""
       
       html += <<EOF
-<a href="#" onClick="document.edit_task_#{row["id"]}.submit();">
-<form method='post' name='edit_task_#{row["id"]}'>
-  <input type="hidden" name="id" value="#{row['id']}" />
-  <input type="hidden" name="mode" value="show_task" />
-  <h1 #{color}>#{cnt}. #{row["title"]}</h1>
-  <div>#{row["task_date"]} #{row["task_from"]} → #{row["section"]} [#{disp_name}] #{row["status"]}</div>
-</form>
-</a>
+<div
+  onMouseOver="this.className='task_list_onmouseover';"
+  onMouseOut="this.className='task_list_onmouseout';"
+>
+  <form method='post' name='edit_task_#{row["id"]}'>
+    <input type="hidden" name="id" value="#{row['id']}" />
+    <input type="hidden" name="mode" value="show_task" />
+    <h1 style="#{color} float: left;" onclick="change_display('plan_list_#{row["id"]}');">#{cnt}.&nbsp;</h1>
+    <h1 style="#{color}" onClick="document.edit_task_#{row["id"]}.submit();">#{row["title"]}</h1>
+    <div class="discription">#{row["task_date"]} #{row["task_from"]} → #{row["section"]} [#{disp_name}] #{row["status"]}</div>
+  </form>
+  <div id="plan_list_#{row["id"]}" style="display: none; border-bottom: 1px solid #999; background-color: #FFF; padding: 10px;">
+    #{pln.list(row["id"])}
+  </div>
+</div>
+EOF
+      html += <<EOF
 EOF
       cnt += 1
     end

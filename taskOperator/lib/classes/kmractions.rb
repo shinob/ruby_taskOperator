@@ -96,7 +96,11 @@ class KmrActions < Model
       color = (color == "#FFF") ? "#EEE" : "#FFF"
       
       html += <<EOF
-<a href="#" onClick="document.edit_action_#{row["id"]}.submit();">
+<div
+  onMouseOver="this.className='action_list_onmouseover';"
+  onMouseOut="this.className='action_list_onmouseout';"
+  onClick="document.edit_action_#{row["id"]}.submit();"
+>
 <form method='post' name='edit_action_#{row["id"]}'>
   <input type="hidden" name="id" value="#{row['id']}" />
   <input type="hidden" name="plan_id" value="#{row['plan_id']}" />
@@ -104,7 +108,7 @@ class KmrActions < Model
   <h1>#{row["note"]}</h1>
   <p>#{row["add_date"]} [#{disp_name}] #{row["status"]}</p>
 </form>
-</a>
+</div>
 EOF
     end
     

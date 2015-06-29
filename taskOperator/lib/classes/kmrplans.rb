@@ -129,7 +129,11 @@ class KmrPlans < Model
       
       html += <<EOF
 <div style="background-color: #{color};">
-<a href="#" onClick="document.edit_plan_#{row["id"]}.submit();">
+<div
+  onMouseOver="this.className='plan_list_onmouseover';"
+  onMouseOut="this.className='plan_list_onmouseout';"
+  onClick="document.edit_plan_#{row["id"]}.submit();"
+>
 <form method='post' name='edit_plan_#{row["id"]}'>
   <input type="hidden" name="id" value="#{row['id']}" />
   <input type="hidden" name="task_id" value="#{row['task_id']}" />
@@ -138,8 +142,8 @@ class KmrPlans < Model
   <p>#{row["complete"]}</p>
   <p>状況 [#{row["status"]}] #{row["add_date"]} [#{disp_name}] </p>
 </form>
+</div>
 #{act.list(row["id"])}
-</a>
 </div>
 EOF
     end

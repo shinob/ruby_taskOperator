@@ -43,4 +43,23 @@ window.onresize = function() {
 	resizePage();
 }
 
+function show(div) {
+	//var div = getDiv(name);
+	div.style.display = "";
+}
+
+function hide(div) {
+	//var div = getDiv(name);
+	div.style.display = "none";
+}
+
+function change_display(name) {
+	var obj = getDiv(name);
+	//alert(obj.style.display);
+	if(obj.style.display == "none") {
+		show(obj);
+	} else {
+		hide(obj);
+	}
+}
 

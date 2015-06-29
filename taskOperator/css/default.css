@@ -152,13 +152,27 @@ div.task_list h1 {
 	font-size: 16pt;
 	cursor: pointer;
 	font-weight: normal;
+	line-height: 125%;
+/*
+	border-bottom: 1px solid #F00;
+*/
+}
+
+.task_list_onmouseover {
+	background-color: #EFE;
+}
+
+.task_list_onmouseout {
+/*
+	background-color: #FFF;
+*/
 }
 
 div.task_list a:hover form {
 	background-color: #DDD;
 }
 
-div.task_list div {
+div.task_list div.discription {
 	padding: 0px 20px;
 }
 
@@ -188,6 +202,16 @@ div.plan_list h1 {
 
 div.plan_list p {
 	margin-left: 20px;
+}
+
+.plan_list_onmouseover {
+	background-color: #FCC;
+}
+
+.plan_list_onmouseout {
+/*
+	background-color: #FFF;
+*/
 }
 
 div.plan_list a:hover form {
@@ -222,6 +246,16 @@ div.action_list h1 {
 div.action_list p {
 	margin: 0px;
 	text-align: right
+}
+
+.action_list_onmouseover {
+	background-color: #CCF;
+}
+
+.action_list_onmouseout {
+/*
+	background-color: #FFF;
+*/
 }
 
 div.action_list a:hover form {
