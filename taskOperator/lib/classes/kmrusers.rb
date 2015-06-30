@@ -139,13 +139,17 @@ class KmrUsers < Model
   def get_add_form()
     
     html = <<EOF
-<a href="#" onclick="document.add_user.submit();">
+<div onclick="document.add_user.submit();">
 <form method='post' name="add_user">
   <input type="hidden" name="id" value="0" />
   <input type="hidden" name="mode" value="add_user" />
-  <p>ユーザー追加</p>
+  <p
+  onMouseOver="this.style.color='red';"
+  onMouseOut="this.style.color='white';"
+  onClick="this.style.color='white';"
+  >ユーザー追加</p>
 </form>
-</a>
+</div>
 EOF
     return html
     
@@ -162,14 +166,18 @@ EOF
       color = (color == "#FFF") ? "#EEE" : "#FFF"
       
       html += <<EOF
-<a href="#" onclick="document.edit_user_#{row["id"]}.submit();">
+<div
+  onMouseOver="this.className='task_list_onmouseover';"
+  onMouseOut="this.className='task_list_onmouseout';"
+  onclick="this.className='task_list_onmouseout'; document.edit_user_#{row["id"]}.submit();"
+>
 <form method='post' name="edit_user_#{row["id"]}">
   <input type="hidden" name="id" value="#{row['id']}" />
   <input type="hidden" name="mode" value="edit_user" />
   <h1>#{row["disp_name"]}</h1>
   <div>#{row["name"]} [#{row["auth_type"]}]</div>
 </form>
-</a>
+</div>
 EOF
     end
     
@@ -194,7 +202,11 @@ EOF
       $session["user"] = ""
       @message = "ログアウトしました"
     elsif mode == "login" then
-      $session["user"] = login()
+      if $flg_ad then
+        $session["user"] = login_with_ldap()
+      else
+        $session["user"] = login()
+      end
     end
     
     debug("docUsers.is_login()")
@@ -298,22 +310,30 @@ EOF
     opt = ""
     if !is_guest() then
       opt = <<EOF
-<a href="#" onClick="document.change_password.submit();">
+<div onClick="document.change_password.submit();">
 <form method="post" name="change_password" style="float: right;">
   <input type="hidden" name="mode" value="change_password" />
-  <p>パスワード変更</p>
+  <p
+  onMouseOver="this.style.color='red';"
+  onMouseOut="this.style.color='white';"
+  onClick="this.style.color='white';"
+  >パスワード変更</p>
 </form>
-</a>
+</div>
 EOF
     end
     
     html = <<EOF
-<a href="#" onClick="document.logout.submit();">
+<div onClick="document.logout.submit();">
 <form method="post" name="logout" style="float: right;">
   <input type="hidden" name="mode" value="logout" />
-  <p>ログアウト</p>
+  <p
+  onMouseOver="this.style.color='red';"
+  onMouseOut="this.style.color='white';"
+  onClick="this.style.color='white';"
+  >ログアウト</p>
 </form>
-</a>
+</div>
 #{opt}
 EOF
     

@@ -17,6 +17,7 @@ $databaseDir = $currentDir + "databases/"
 
 classes = [
   "tools.rb",
+  "aduser.rb",
   "dbconnect_sqlite3.rb",
   "model.rb",
   "kmrusers.rb",
@@ -52,6 +53,12 @@ $db_pass = "root"
 $db_name = "taskOperator"
 
 $db = DBConnect.new($db_host, $db_user, $db_pass, $databaseDir + $db_name)
+
+$flg_ad = false
+
+$ad_host = "0.0.0.0"
+$ad_port = "389"
+$ad_domain = "@domain"
 
 $usr = KmrUsers.new()
 $auth_type = ""

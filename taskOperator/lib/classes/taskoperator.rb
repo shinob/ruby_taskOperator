@@ -196,11 +196,15 @@ EOF
   
   def get_cancel_form()
     html = <<EOF
-<a href="#" onclick="window.location='./'">
+<div onclick="window.location='./'">
 <form>
-  <p>キャンセル</p>
+  <p
+  onMouseOver="this.style.color='red';"
+  onMouseOut="this.style.color='white';"
+  onClick="this.style.color='white';"
+  >キャンセル</p>
 </form>
-</a>
+</div>
 EOF
     return html
   end
@@ -220,12 +224,16 @@ EOF
     html = ""
     if is_admin() then
       html = <<EOF
-<a href="#" onClick="document.list_user.submit();">
+<div onClick="document.list_user.submit();">
 <form method="post" name="list_user" style="float: right;">
   <input type="hidden" name="mode" value="list_user" />
-  <p>ユーザ一覧</p>
+  <p
+  onMouseOver="this.style.color='red';"
+  onMouseOut="this.style.color='white';"
+  onClick="this.style.color='white';"
+  >ユーザ一覧</p>
 </form>
-</a>
+</div>
 EOF
     end
     return html
@@ -233,11 +241,15 @@ EOF
   
   def get_list_task_form()
     html = <<EOF
-<a href="#" onclick="window.location='./'">
+<div onclick="window.location='./'">
 <form>
-  <p>タスク一覧</p>
+  <p
+  onMouseOver="this.style.color='red';"
+  onMouseOut="this.style.color='white';"
+  onClick="this.style.color='white';"
+  >タスク一覧</p>
 </form>
-</a>
+</div>
 EOF
     return html
   end
@@ -245,12 +257,16 @@ EOF
   def get_list_all_task_form()
     name = "list_all_task"
     html = <<EOF
-<a href="#" onClick="document.#{name}.submit();">
+<div onClick="document.#{name}.submit();">
 <form method="post" name="#{name}">
   <input type="hidden" name="mode" value="#{name}" />
-  <p>全タスク</p>
+  <p
+  onMouseOver="this.style.color='red';"
+  onMouseOut="this.style.color='white';"
+  onClick="this.style.color='white';"
+  >全タスク</p>
 </form>
-</a>
+</div>
 EOF
     return html
   end
@@ -258,25 +274,33 @@ EOF
   def get_list_completed_task_form()
     name = "list_completed_task"
     html = <<EOF
-<a href="#" onClick="document.#{name}.submit();">
+<div onClick="document.#{name}.submit();">
 <form method="post" name="#{name}">
   <input type="hidden" name="mode" value="#{name}" />
-  <p>完了タスク</p>
+  <p
+  onMouseOver="this.style.color='red';"
+  onMouseOut="this.style.color='white';"
+  onClick="this.style.color='white';"
+  >完了タスク</p>
 </form>
-</a>
+</div>
 EOF
     return html
   end
   
   def get_task_form(id, name, str)
     html = <<EOF
-<a href="#" onClick="document.#{name}.submit();">
+<div onClick="document.#{name}.submit();">
 <form method="post" name="#{name}">
   <input type="hidden" name="mode" value="#{name}" />
   <input type="hidden" name="id" value="#{id}" />
-  <p>#{str}</p>
+  <p
+  onMouseOver="this.style.color='red';"
+  onMouseOut="this.style.color='white';"
+  onClick="this.style.color='white';"
+  >#{str}</p>
 </form>
-</a>
+</div>
 EOF
     return html
   end
@@ -310,14 +334,18 @@ EOF
   
   def get_plan_form(id, task_id, name, str)
     html = <<EOF
-<a href="#"  onClick="document.#{name}.submit();">
+<div onClick="document.#{name}.submit();">
 <form method="post" name="#{name}">
   <input type="hidden" name="mode" value="#{name}" />
   <input type="hidden" name="id" value="#{id}" />
   <input type="hidden" name="task_id" value="#{task_id}" />
-  <p>#{str}</p>
+  <p
+  onMouseOver="this.style.color='red';"
+  onMouseOut="this.style.color='white';"
+  onClick="this.style.color='white';"
+  >#{str}</p>
 </form>
-</a>
+</div>
 EOF
     return html
   end
@@ -337,13 +365,17 @@ EOF
   def get_add_action_form(plan_id)
     name = "add_action"
     html = <<EOF
-<a href="#" onClick="document.#{name}.submit();">
+<div onClick="document.#{name}.submit();">
 <form method="post" name="#{name}">
   <input type="hidden" name="mode" value="#{name}" />
   <input type="hidden" name="plan_id" value="#{plan_id}" />
-  <p>アクション追加</p>
+  <p
+  onMouseOver="this.style.color='red';"
+  onMouseOut="this.style.color='white';"
+  onClick="this.style.color='white';"
+  >アクション追加</p>
 </form>
-</a>
+</div>
 EOF
     return html
   end
