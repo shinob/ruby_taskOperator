@@ -108,9 +108,10 @@ class KmrTasks < Model
   <form method='post' name='edit_task_#{row["id"]}'>
     <input type="hidden" name="id" value="#{row['id']}" />
     <input type="hidden" name="mode" value="show_task" />
-    <h1 style="#{color} float: left;" onclick="change_display('plan_list_#{row["id"]}');">#{cnt}.&nbsp;</h1>
-    <h1 style="#{color}" onClick="document.edit_task_#{row["id"]}.submit();">#{row["title"]}</h1>
+    <h1 style="#{color} float: left;  width: 4%; text-align: right;" onclick="change_display('plan_list_#{row["id"]}');">#{cnt}.&nbsp;</h1>
+    <h1 style="#{color} float: right; width:95%;" onClick="document.edit_task_#{row["id"]}.submit();">#{row["title"]}</h1>
     <div class="discription">#{row["task_date"]} #{row["task_from"]} → #{row["section"]} [#{disp_name}] #{row["status"]}</div>
+    <div class="discription">#{row["tags"]}</div>
   </form>
   <div id="plan_list_#{row["id"]}" style="display: none; border-bottom: 1px solid #999; background-color: #FFF; padding: 10px;">
     #{pln.list(row["id"])}

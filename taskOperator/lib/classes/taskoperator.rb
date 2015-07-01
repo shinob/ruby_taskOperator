@@ -4,7 +4,7 @@ class TaskOperator
     @style = ""
     @page_title = "タスクオペレーター"
     @title = ""
-    @foot = "&nbsp;"
+    @foot = "<br /><a href='https://github.com/shinob/ruby_taskOperator' target='_blank'>ruby_taskOperator@GitHub</a>"
     @menu = ""
   end
   

@@ -101,6 +101,7 @@ a:hover {
 */
 	border-top: 0px solid #000;
 	text-align: center;
+	padding: 5px;
 }
 
 #login_form {
@@ -153,8 +154,8 @@ div.task_list h1 {
 	cursor: pointer;
 	font-weight: normal;
 	line-height: 125%;
+	border: 0px solid #F00;
 /*
-	border-bottom: 1px solid #F00;
 */
 }
 
